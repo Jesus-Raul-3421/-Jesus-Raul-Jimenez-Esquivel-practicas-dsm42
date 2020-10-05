@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get( 'Miprimerlayout', function(){ 
+return view('Mi primer layout');
+});
+
+
+Route:: resource('/lista de alumnos','/Alumno/controlleralumnos');
