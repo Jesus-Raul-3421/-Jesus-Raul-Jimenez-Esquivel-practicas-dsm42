@@ -15,9 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get( 'Miprimerlayout', function(){ 
-return view('Mi primer layout');
-});
+Route:: get('/miprimerarray', 'Alumno\controlleralumnos@getalumnos')->name('alumnos');
 
-
-Route:: resource('/lista de alumnos','/Alumno/controlleralumnos');
+Route:: resource('/listadealumnos', 'Alumno\controlleralumnos');

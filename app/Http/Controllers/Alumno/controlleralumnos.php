@@ -12,6 +12,18 @@ class controlleralumnos extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function getalumnos()
+    {
+        $alumnos = array(
+          'nombre'=> 'Jose',
+          'apellido'=> 'Lopez',
+          'email'=> 'al22531721@gmail.com',
+          'edad'=> 22,
+        );
+         return response()->json($alumnos);   
+    }
+
     public function index()
     {
         //
