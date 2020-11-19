@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Alumno;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\materias;
 
 class controllermaterias extends Controller
 {
@@ -14,6 +15,9 @@ class controllermaterias extends Controller
      */
     public function index()
     {
+        $materias = materias::all();
+        return response()->json(['materias'=> $materias]);
+
         //
     }
 
@@ -36,6 +40,8 @@ class controllermaterias extends Controller
     public function store(Request $request)
     {
         //
+        $materias = create::all($requests);
+        return ('El registro fue un exito');
     }
 
     /**
