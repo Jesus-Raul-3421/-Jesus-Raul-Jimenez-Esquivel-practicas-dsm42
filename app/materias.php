@@ -1,29 +1,34 @@
 <?php
 
-namespace App;
+namespace App\Http\Requests;
 
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Database\Eloquent\Model;
 use  Illuminate\Notifications\Notifiable;
-class materias extends Model
+
+class materias extends FormRequest
 {
-    //
-    use Notifiable;
+    /**
+     * Determine if the user is authorized to take this request.
+     * 
+     * @return bool
+     */
+    public function authorize(){
+
+        return true;
+    }
 
     /**
-     * the atributes that are nass assignable.
+     * Get the validation rules that apply to the request.
      * 
      * @var array
      */
-    protected $fillable = [
-        'nombre',
+   public function rules(){
+
+    return[
+        //
+        'nombre'=>'required'
     ];
+   }
    
-    public function materias()
-    {
-        $users = materias::select('id','nombre')
-        ->where(20)
-        ->get();
-    }
-
 }
-
