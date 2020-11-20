@@ -81,9 +81,11 @@ class controllermaterias extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(materiasRequest $request,materias $materia)
     {
         //
+        $materia->update($requets->all());
+        return response()->json($materia);
     }
 
     /**
@@ -95,5 +97,7 @@ class controllermaterias extends Controller
     public function destroy($id)
     {
         //
+        $materia = materias:: delete();
+        return response()->json('El registro fue eliminado');
     }
 }
