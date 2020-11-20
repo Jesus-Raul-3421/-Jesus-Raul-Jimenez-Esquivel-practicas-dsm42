@@ -85,7 +85,7 @@ class controllermaterias extends Controller
     {
         //
         $materia->update($requets->all());
-        return response()->json($materia);
+        return response()->json('El registro a sido modificado');
     }
 
     /**
