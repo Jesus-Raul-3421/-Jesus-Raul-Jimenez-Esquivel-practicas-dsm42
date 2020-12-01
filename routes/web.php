@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','Pagecontroller@index' );
+
 
 Route::get('Helloworld', function () {
     return view('Helloworld');
@@ -25,13 +24,13 @@ Route:: resource('/listadealumnos', 'Alumno\controlleralumnos');
 
 Route::group(['prefix'=>'api'], function(){
 Route::apiResource('materias','Alumno\controllermaterias');
-Route::apiResource('alumnos','Alumno\controlleralumnos');
+//Route::apiResource('alumnos','Alumno\controlleralumnos');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'Backend\HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'Backend\HomeController@index')->name('home');
