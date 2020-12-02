@@ -15,7 +15,21 @@
                     @endif
 
                    
-                    <post-component></post-component>
+                    <post-component inline-template >
+                        <table class="table table-hover table-striped">
+                        <thead>
+                            <tr>
+                            <th>Nombre</th>
+                            <th>URL</th>
+                            </thead>
+                            <body>
+                                <tr v-for="pokemon in pokemons">
+                                <td v-text="pokemon.name"></td>
+                                <td v-text="pokemon.url"></td>
+                                </tr>
+                            </body>
+
+                     </post-component>
                 </div>
             </div>
         </div>

@@ -1914,19 +1914,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      post: null
+      pokemons: []
     };
   },
   mounted: function mounted() {
-    this.getPost();
-    console.log('Component mounted.');
+    this.getPokemons();
+    console.log('se carga la función de axios');
   },
   methods: {
-    getPost: function getPost() {
+    getPokemons: function getPokemons() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('api/post').then(function (response) {
-        _this.post = response.data;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('https://pokeapi.co/api/v2/pokemon').then(function (response) {
+        _this.pokemons = response.data.results;
+        console.log(_this.pokemons);
       });
     }
   }

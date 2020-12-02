@@ -1,22 +1,21 @@
 <script>
-
 import axios from 'axios';
     export default {
-        data(){
+        data (){
             return{
-                post:null
+                pokemons: []
             }
         },
         mounted() {
-            this.getPost();
-            console.log('Component mounted.')
+            this.getPokemons();
+            console.log('se carga la función de axios')
         },
-        
-        methods:{
-            getPost: function (){
-                axios.get('api/post').then(response =>{
-                    this.post = response.data
-                })
+        methods: {
+            getPokemons: function () {
+                 axios.get('https://pokeapi.co/api/v2/pokemon').then(response => {
+                    this.pokemons = response.data.results
+                    console.log (this.pokemons);
+                });
             }
         }
     }
